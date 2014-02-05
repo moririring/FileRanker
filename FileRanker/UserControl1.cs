@@ -11,6 +11,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using System.Collections;
 //using IWshRuntimeLibrary;
 
 namespace FileRanker
@@ -63,6 +64,16 @@ namespace FileRanker
 
             var item = listView1.Items.Add(Path.GetFileName(shortcut.TargetPath));
             item.SubItems.Add(shortcut.TargetPath);
+
+            if (Type == ListViewType.Folder)
+            {
+                item.SubItems.Add(Directory.GetLastWriteTime(shortcut.TargetPath).ToString());
+            }
+            else
+            {
+                item.SubItems.Add(File.GetLastWriteTime(shortcut.TargetPath).ToString());
+            }
+
             item.Tag = linkName;
             item.ImageIndex = listView1.Items.Count - 1;
             //アイコン
@@ -109,13 +120,27 @@ namespace FileRanker
             }
         }
 
-
+        ListViewItemComparer listViewItemSorter;
 
         public UserControl1()
         {
             InitializeComponent();
             PropertyInfo prop = listView1.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             prop.SetValue(listView1, true, null);
+
+
+            listViewItemSorter = new ListViewItemComparer();
+            listViewItemSorter.ColumnModes = new ListViewItemComparer.ComparerMode[]
+            {
+                ListViewItemComparer.ComparerMode.String,
+                ListViewItemComparer.ComparerMode.String,
+                ListViewItemComparer.ComparerMode.DateTime,
+            };
+            listView1.ListViewItemSorter = listViewItemSorter;
+
+            listViewItemSorter.Column = 2;
+            listViewItemSorter.Order = SortOrder.Descending;
+
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -177,5 +202,13 @@ namespace FileRanker
                     break;
             }
         }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            listViewItemSorter.Column = e.Column;
+            listView1.Sort();
+        }
     }
+
+
 }
