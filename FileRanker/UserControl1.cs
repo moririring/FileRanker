@@ -32,6 +32,11 @@ namespace FileRanker
                 contextMenuStrip1.Items[1].Visible = false;
             }
             fileSystemWatcher1.Path = path;
+            for (int i = 0; i < length; i++)
+            {
+                if(i)
+
+            }
         }
         // SHGetFileInfo関数
         [DllImport("shell32.dll")]

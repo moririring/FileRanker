@@ -140,5 +140,10 @@ namespace FileRanker
             TaskTrayCloseToolStripMenuItem.Checked = Properties.Settings.Default.TaskTrayClose;
         }
 
+        private void VersionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AboutBox1();
+            form.ShowDialog();
+        }
     }
 }

@@ -46,8 +46,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.userControl11 = new FileRanker.UserControl1();
             this.userControl12 = new FileRanker.UserControl1();
+            this.VersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(678, 444);
+            this.panel1.Size = new System.Drawing.Size(678, 422);
             this.panel1.TabIndex = 1;
             // 
             // tabControl1
@@ -73,7 +75,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(678, 444);
+            this.tabControl1.Size = new System.Drawing.Size(678, 422);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -82,7 +84,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(670, 418);
+            this.tabPage1.Size = new System.Drawing.Size(670, 396);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "フォルダ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -93,7 +95,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(670, 418);
+            this.tabPage2.Size = new System.Drawing.Size(670, 396);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ファイル";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -156,6 +158,8 @@
             // 
             // TaskTrayMinimumToolStripMenuItem
             // 
+            this.TaskTrayMinimumToolStripMenuItem.Checked = true;
+            this.TaskTrayMinimumToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.TaskTrayMinimumToolStripMenuItem.Name = "TaskTrayMinimumToolStripMenuItem";
             this.TaskTrayMinimumToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.TaskTrayMinimumToolStripMenuItem.Text = "最小化でタスクバーから消す";
@@ -163,6 +167,8 @@
             // 
             // TaskTrayCloseToolStripMenuItem
             // 
+            this.TaskTrayCloseToolStripMenuItem.Checked = true;
+            this.TaskTrayCloseToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.TaskTrayCloseToolStripMenuItem.Name = "TaskTrayCloseToolStripMenuItem";
             this.TaskTrayCloseToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.TaskTrayCloseToolStripMenuItem.Text = "終了してもタスクトレイに常駐";
@@ -180,30 +186,39 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenToolStripMenuItem,
+            this.VersionToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.OpenToolStripMenuItem.Text = "開く(&O)";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ExitToolStripMenuItem.Text = "終了(&X)";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 447);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(678, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // userControl11
             // 
             this.userControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControl11.Location = new System.Drawing.Point(3, 3);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(664, 412);
+            this.userControl11.Size = new System.Drawing.Size(664, 390);
             this.userControl11.TabIndex = 0;
             // 
             // userControl12
@@ -211,8 +226,15 @@
             this.userControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControl12.Location = new System.Drawing.Point(3, 3);
             this.userControl12.Name = "userControl12";
-            this.userControl12.Size = new System.Drawing.Size(664, 412);
+            this.userControl12.Size = new System.Drawing.Size(664, 390);
             this.userControl12.TabIndex = 0;
+            // 
+            // VersionToolStripMenuItem
+            // 
+            this.VersionToolStripMenuItem.Name = "VersionToolStripMenuItem";
+            this.VersionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.VersionToolStripMenuItem.Text = "バージョン(&V)";
+            this.VersionToolStripMenuItem.Click += new System.EventHandler(this.VersionToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -220,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 469);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "最近ミタゾゥ";
@@ -257,6 +280,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem OpenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem VersionToolStripMenuItem;
     }
 }
 

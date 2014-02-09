@@ -49,7 +49,7 @@ namespace FileRanker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool TaskTrayMinimum {
             get {
                 return ((bool)(this["TaskTrayMinimum"]));
@@ -61,7 +61,7 @@ namespace FileRanker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool TaskTrayClose {
             get {
                 return ((bool)(this["TaskTrayClose"]));

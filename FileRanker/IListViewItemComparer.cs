@@ -130,6 +130,9 @@ namespace FileRanker
             ListViewItem itemx = (ListViewItem)x;
             ListViewItem itemy = (ListViewItem)y;
 
+            if (itemx.SubItems.Count <= _column) return 0;
+            if (itemy.SubItems.Count <= _column) return 0;
+
             //•À‚×‘Ö‚¦‚Ì•û–@‚ðŒˆ’è
             if (_columnModes != null && _columnModes.Length > _column)
             {
